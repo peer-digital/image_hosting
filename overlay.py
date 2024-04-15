@@ -59,11 +59,11 @@ areas = [
 mockup_output = add_book_cover_to_mockup(
   mockup_url='https://peer-digital.github.io/image_hosting/base_image.png',
       cover_urls=[
-        'https://bilder.akademibokhandeln.se/images_akb/9789189820692_383/omgiven-av-lognare',  # URL to the first book cover
-        'https://dyson-h.assetsadobe2.com/is/image/content/dam/dyson/images/products/hero/447002-01.png?$responsive$&cropPathE=desktop&fit=stretch,1&wid=960',  # URL to the second book cover
-        'https://img01.ztat.net/article/spp-media-p1/bb09f307007d4a9ba130fadcae69e2ea/351b85e5913d4c46956b0eba790030c1.jpg?imwidth=1800&filter=packshot'   # URL to the third book cover
+        'https://www.myrorna.se/app/uploads/561884043_64bf4fd0-819b-4c6b-9a84-0a82c7581a07.jpg',  # URL to the first book cover
+        'https://img.tradera.net/large-fit/703/561887703_f382ab3d-2bee-42fe-a2c4-9cd079d0795c.jpg',  # URL to the second book cover
+        'https://www.myrorna.se/app/uploads/561892632_f966364d-f40e-4f19-846e-0ef2588b1cb9.jpg'   # URL to the third book cover
     ],
-    output_path='final_mockup_with_covers.png',  # Path where the final image will be saved
+    output_path='myrorna.png',  # Path where the final image will be saved
     areas=areas  # The list of areas where each book cover should be placed
 )
 
