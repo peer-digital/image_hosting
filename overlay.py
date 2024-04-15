@@ -46,14 +46,15 @@ def add_book_cover_to_mockup(mockup_url, cover_urls, output_path, areas, fill_pe
 
 # Correct coordinates for each area
 areas = [
-    (342, 1672, 794, 2222),
-    (1052, 1674, 1510, 2224),
-    (1765, 1670, 2218, 2223)
+    (314, 1720, 766, 2269),
+    (889, 1720, 1346, 2271),
+    (1472, 1716, 1925, 2270)
 ]
+
 
 # Example usage with new coordinates
 mockup_output = add_book_cover_to_mockup(
-  mockup_url='https://peer-digital.github.io/image_hosting/base_image_new.png',
+  mockup_url='https://peer-digital.github.io/image_hosting/base_image.png',
       cover_urls=[
         'https://bilder.akademibokhandeln.se/images_akb/9789189820692_383/omgiven-av-lognare',  # URL to the first book cover
         'https://dyson-h.assetsadobe2.com/is/image/content/dam/dyson/images/products/hero/447002-01.png?$responsive$&cropPathE=desktop&fit=stretch,1&wid=960',  # URL to the second book cover
