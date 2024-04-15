@@ -1,6 +1,8 @@
 import requests
 from PIL import Image
 from io import BytesIO
+import subprocess
+
 
 def download_image(image_url):
     response = requests.get(image_url)
@@ -15,6 +17,7 @@ def calculate_resize_dimensions(image, max_width, max_height):
     new_width = int(original_width * min_ratio)
     new_height = int(original_height * min_ratio)
     return new_width, new_height
+
 
 def add_book_cover_to_mockup(mockup_url, cover_urls, output_path, areas, fill_percent=0.8):
     mockup = download_image(mockup_url)
@@ -46,9 +49,9 @@ def add_book_cover_to_mockup(mockup_url, cover_urls, output_path, areas, fill_pe
 
 # Correct coordinates for each area
 areas = [
-    (314, 1720, 766, 2269),
-    (889, 1720, 1346, 2271),
-    (1472, 1716, 1925, 2270)
+    (406, 2067, 1014, 2851),
+    (1230, 2066, 1838, 2849),
+    (2066, 2063, 2662, 2858)
 ]
 
 
