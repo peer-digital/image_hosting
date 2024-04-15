@@ -2,75 +2,69 @@ import requests
 from PIL import Image
 from io import BytesIO
 
-import requests
-from PIL import Image, ImageOps
-from io import BytesIO
-
 def download_image(image_url):
-    """
-    Download an image from a URL.
-    :param image_url: str, URL of the image to be downloaded.
-    :return: Image, the downloaded image.
-    """
     response = requests.get(image_url)
     response.raise_for_status()  # Raises an HTTPError for bad responses
     return Image.open(BytesIO(response.content))
 
-def add_book_cover_to_mockup(mockup_url, cover_urls, output_path, areas):
-    """
-    Download book covers from URLs, resize them to fit specified areas while maintaining aspect ratio,
-    and overlay them onto a mockup image.
-    :param mockup_url: str, URL of the original mockup image.
-    :param cover_urls: list, URLs of the book cover images.
-    :param output_path: str, path to save the final image.
-    :param areas: list of tuples, each tuple contains coordinates (x1, y1, x2, y2) defining an area.
-    :return: str, path to the output image.
-    """
-    # Download the mockup image
+def calculate_resize_dimensions(image, max_width, max_height):
+    original_width, original_height = image.size
+    width_ratio = max_width / original_width
+    height_ratio = max_height / original_height
+    min_ratio = min(width_ratio, height_ratio)
+    new_width = int(original_width * min_ratio)
+    new_height = int(original_height * min_ratio)
+    return new_width, new_height
+
+def add_book_cover_to_mockup(mockup_url, cover_urls, output_path, areas, fill_percent=0.8):
     mockup = download_image(mockup_url)
     if mockup.mode != 'RGBA':
-        mockup = mockup.convert('RGBA')  # Convert to RGBA if not already
+        mockup = mockup.convert('RGBA')
 
-    # Overlay each book cover onto the mockup
     for cover_url, (x1, y1, x2, y2) in zip(cover_urls, areas):
-        # Download the book cover image
         cover = download_image(cover_url)
         if cover.mode != 'RGBA':
-            cover = cover.convert('RGBA')  # Convert to RGBA if not already
-        
-        # Calculate the size to resize the cover to fit the area while maintaining aspect ratio
-        area_width, area_height = x2 - x1, y2 - y1
-        cover.thumbnail((area_width, area_height), Image.LANCZOS)  # Resize image within the area bounds
+            cover = cover.convert('RGBA')
 
-        # Calculate new position to center the image in the designated area
-        cover_width, cover_height = cover.size
-        new_x = x1 + (area_width - cover_width) // 2
-        new_y = y1 + (area_height - cover_height) // 2
+        # Calculate the maximum dimensions for the cover
+        max_width = (x2 - x1) * fill_percent
+        max_height = (y2 - y1) * fill_percent
+        new_width, new_height = calculate_resize_dimensions(cover, max_width, max_height)
 
-        # Create a mask for transparency handling
-        mask = cover if 'A' in cover.getbands() else None
+        # Resize the cover to the new dimensions
+        cover = cover.resize((new_width, new_height), Image.LANCZOS)
 
-        # Paste the book cover image onto the mockup at the newly calculated position
-        mockup.paste(cover, (new_x, new_y), mask)
+        # Calculate the new top-left position to center the cover in the area
+        new_x = x1 + (x2 - x1 - new_width) // 2
+        new_y = y1 + (y2 - y1 - new_height) // 2
 
-    # Save the updated mockup as PNG to preserve transparency
+        # Paste the resized and centered cover image onto the mockup
+        mockup.paste(cover, (new_x, new_y), cover)
+
     mockup.save(output_path, 'PNG')
-
     return output_path
 
-# Example usage
+# Correct coordinates for each area
+areas = [
+    (342, 1672, 794, 2222),
+    (1052, 1674, 1510, 2224),
+    (1765, 1670, 2218, 2223)
+]
+
+# Example usage with new coordinates
 mockup_output = add_book_cover_to_mockup(
-    mockup_url='https://peer-digital.github.io/image_hosting/base_image.png',
-    cover_urls=[
+  mockup_url='https://peer-digital.github.io/image_hosting/base_image_new.png',
+      cover_urls=[
         'https://bilder.akademibokhandeln.se/images_akb/9789189820692_383/omgiven-av-lognare',  # URL to the first book cover
-        'https://bilder.akademibokhandeln.se/images_akb/9789189820692_383/omgiven-av-lognare',  # URL to the second book cover
-        'https://bilder.akademibokhandeln.se/images_akb/9789189820692_383/omgiven-av-lognare'   # URL to the third book cover
+        'https://dyson-h.assetsadobe2.com/is/image/content/dam/dyson/images/products/hero/447002-01.png?$responsive$&cropPathE=desktop&fit=stretch,1&wid=960',  # URL to the second book cover
+        'https://img01.ztat.net/article/spp-media-p1/bb09f307007d4a9ba130fadcae69e2ea/351b85e5913d4c46956b0eba790030c1.jpg?imwidth=1800&filter=packshot'   # URL to the third book cover
     ],
-    output_path='final_mockup_with_covers.png',
-    areas=[(36, 150, 78, 199), (107, 150, 149, 199), (178, 150, 220, 199)]
+    output_path='final_mockup_with_covers.png',  # Path where the final image will be saved
+    areas=areas  # The list of areas where each book cover should be placed
 )
 
 print(f"Updated mockup saved to {mockup_output}")
+
 
 
 
