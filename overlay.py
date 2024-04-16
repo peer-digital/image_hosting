@@ -40,7 +40,7 @@ def add_book_cover_to_mockup(mockup_url: str, cover_urls: list, output_path: str
         'pngquant', 
         '--force', 
         '--speed', '1',  # Adjust speed for a balance of compression quality and speed
-        '--quality', '40-70',  # Set a more aggressive quality range
+        '--quality', '70-100',  # Set a more aggressive quality range
         '--colors', '256',  # Reduce the number of colors
         '--skip-if-larger',  # Skip compression if it results in a larger file
         '-', 
