@@ -40,8 +40,8 @@ def add_book_cover_to_mockup(mockup_url: str, cover_urls: list, output_path: str
         'pngquant', 
         '--force', 
         '--speed', '1',  # Adjust speed for a balance of compression quality and speed
-        '--quality', '10-40',  # Set a more aggressive quality range
-        '--colors', '64',  # Reduce the number of colors
+        '--quality', '40-70',  # Set a more aggressive quality range
+        '--colors', '256',  # Reduce the number of colors
         '--skip-if-larger',  # Skip compression if it results in a larger file
         '-', 
         '--output', output_path],
@@ -57,10 +57,11 @@ def add_book_cover_to_mockup(mockup_url: str, cover_urls: list, output_path: str
 
 # Correct coordinates for each area
 areas = [
-    (406, 2067, 1014, 2851),
-    (1230, 2066, 1838, 2849),
-    (2066, 2063, 2662, 2858)
+    (282, 1404, 684, 1943),  # Updated from coords="282,1404,684,1943"
+    (834, 1405, 1250, 1945), # Updated from coords="834,1405,1250,1945"
+    (1398, 1404, 1815, 1949) # Updated from coords="1398,1404,1815,1949"
 ]
+
 
 
 # Example usage remains the same.
@@ -71,7 +72,7 @@ mockup_output = add_book_cover_to_mockup(
         'https://img.tradera.net/large-fit/703/561887703_f382ab3d-2bee-42fe-a2c4-9cd079d0795c.jpg',
         'https://www.myrorna.se/app/uploads/561892632_f966364d-f40e-4f19-846e-0ef2588b1cb9.jpg'
     ],
-    output_path='myrorna2.png',
+    output_path='myrorna1.png',
     areas=areas
 )
 
