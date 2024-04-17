@@ -57,10 +57,11 @@ def add_book_cover_to_mockup(mockup_url: str, cover_urls: list, output_path: str
 
 # Correct coordinates for each area
 areas = [
-    (282, 1404, 684, 1943),  # Updated from coords="282,1404,684,1943"
-    (834, 1405, 1250, 1945), # Updated from coords="834,1405,1250,1945"
-    (1398, 1404, 1815, 1949) # Updated from coords="1398,1404,1815,1949"
+    (316, 1404, 728, 1936),  # Updated from coords="316,1404,728,1936"
+    (830, 1405, 1243, 1936), # Updated from coords="830,1405,1243,1936"
+    (1345, 1405, 1760, 1941) # Updated from coords="1345,1405,1760,1941"
 ]
+
 
 
 
@@ -72,7 +73,7 @@ mockup_output = add_book_cover_to_mockup(
         'https://glitter.se/bilder/artiklar/zoom/172000968300_1.jpg?m=1712929519',
         'https://glitter.se/bilder/artiklar/zoom/172001227600_1.jpg?m=1709539390'
     ],
-    output_path='.png',
+    output_path='glitter_test_ny.png',
     areas=areas
 )
 
