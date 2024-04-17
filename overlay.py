@@ -68,11 +68,11 @@ areas = [
 mockup_output = add_book_cover_to_mockup(
     mockup_url='https://peer-digital.github.io/image_hosting/base_image.png',
     cover_urls=[
-        'https://uropenn.se/thumb/27650/1024x0/RG7438-752_4.webp',
-        'https://uropenn.se/thumb/27720/1024x0/IG2118-122_4.webp',
-        'https://uropenn.se/thumb/29691/1024x0/RG1844-632_4_new.webp'
+        'https://glitter.se/bilder/artiklar/zoom/172001242000_1.jpg?m=1712929520',
+        'https://glitter.se/bilder/artiklar/zoom/172000968300_1.jpg?m=1712929519',
+        'https://glitter.se/bilder/artiklar/zoom/172001227600_1.jpg?m=1709539390'
     ],
-    output_path='uropenn.png',
+    output_path='.png',
     areas=areas
 )
 
