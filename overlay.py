@@ -68,11 +68,11 @@ areas = [
 mockup_output = add_book_cover_to_mockup(
     mockup_url='https://peer-digital.github.io/image_hosting/base_image.png',
     cover_urls=[
-        'https://www.myrorna.se/app/uploads/561884043_64bf4fd0-819b-4c6b-9a84-0a82c7581a07.jpg',
-        'https://img.tradera.net/large-fit/703/561887703_f382ab3d-2bee-42fe-a2c4-9cd079d0795c.jpg',
-        'https://www.myrorna.se/app/uploads/561892632_f966364d-f40e-4f19-846e-0ef2588b1cb9.jpg'
+        'https://uropenn.se/thumb/27650/1024x0/RG7438-752_4.webp',
+        'https://uropenn.se/thumb/27720/1024x0/IG2118-122_4.webp',
+        'https://uropenn.se/thumb/29691/1024x0/RG1844-632_4_new.webp'
     ],
-    output_path='myrorna1.png',
+    output_path='uropenn.png',
     areas=areas
 )
 
