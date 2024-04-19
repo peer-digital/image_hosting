@@ -69,11 +69,11 @@ areas = [
 mockup_output = add_book_cover_to_mockup(
     mockup_url='https://peer-digital.github.io/image_hosting/base_image.png',
     cover_urls=[
-        'https://glitter.se/bilder/artiklar/zoom/172001242000_1.jpg?m=1712929520',
-        'https://glitter.se/bilder/artiklar/zoom/172000968300_1.jpg?m=1712929519',
-        'https://glitter.se/bilder/artiklar/zoom/172001227600_1.jpg?m=1709539390'
+        'https://www.sfbok.se/sites/default/files/styles/1000x/sfbok/sfbokbilder/726/726381.jpg?bust=1704203469&itok=xlcKeb7_',
+        'https://www.sfbok.se/sites/default/files/styles/1000x/sfbok/sfbokbilder/729/729031.jpg?bust=1712566116&itok=gK4Zh6h-',
+        'https://www.sfbok.se/sites/default/files/styles/1000x/sfbok/sfbokbilder/726/726402.jpg?bust=1700836624&itok=WE3g1uR6'
     ],
-    output_path='glitter_test_ny.png',
+    output_path='sfbok.png',
     areas=areas
 )
 
