@@ -69,11 +69,11 @@ areas = [
 mockup_output = add_book_cover_to_mockup(
     mockup_url='https://peer-digital.github.io/image_hosting/base_image.png',
     cover_urls=[
-        'https://www.sfbok.se/sites/default/files/styles/1000x/sfbok/sfbokbilder/726/726381.jpg?bust=1704203469&itok=xlcKeb7_',
-        'https://www.sfbok.se/sites/default/files/styles/1000x/sfbok/sfbokbilder/729/729031.jpg?bust=1712566116&itok=gK4Zh6h-',
-        'https://www.sfbok.se/sites/default/files/styles/1000x/sfbok/sfbokbilder/726/726402.jpg?bust=1700836624&itok=WE3g1uR6'
+        'https://img.nylandersmattor.se/matta-pa-metervara-atlas-clan-carpetition-ab-ovrig-15586-1.jpg',
+        'https://img.nylandersmattor.se/stor-dorrmatta-pa-metervara-cajun-beige-inhouse-group-1.jpg',
+        'https://img.nylandersmattor.se/stor-dorrmatta-pa-metervara-cajun-rod-inhouse-group-1.jpg'
     ],
-    output_path='sfbok.png',
+    output_path='nylanders_mattor.png',
     areas=areas
 )
 
