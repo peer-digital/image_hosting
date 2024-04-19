@@ -69,11 +69,11 @@ areas = [
 mockup_output = add_book_cover_to_mockup(
     mockup_url='https://peer-digital.github.io/image_hosting/base_image.png',
     cover_urls=[
-        'https://img.nylandersmattor.se/matta-pa-metervara-atlas-clan-carpetition-ab-ovrig-15586-1.jpg',
-        'https://img.nylandersmattor.se/stor-dorrmatta-pa-metervara-cajun-beige-inhouse-group-1.jpg',
-        'https://img.nylandersmattor.se/stor-dorrmatta-pa-metervara-cajun-rod-inhouse-group-1.jpg'
+        'https://www.sportproffsen.se/images/products/fitnord-ava300-white-ebike-side-profile_fullres.jpg',
+        'https://www.sportproffsen.se/images/products/fitnord-ranger-700fs-mint--main-image-dsc-8735-enhanced-nr_fullres.jpg',
+        'https://www.sportproffsen.se/images/products/fitnord-rumble-500-black-main-image-dsc-7911_fullres.jpg'
     ],
-    output_path='nylanders_mattor.png',
+    output_path='.png',
     areas=areas
 )
 
