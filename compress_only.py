@@ -40,5 +40,5 @@ def compress_image(input_path: str, output_path: str) -> str:
     return output_path
 
 # Example usage of the compress_image function
-compressed_image_path = compress_image('Group 92.png', 'generic_products.png')
+compressed_image_path = compress_image('Group 95.jpg', '.jpg')
 print(f"Compressed image saved to {compressed_image_path}")
