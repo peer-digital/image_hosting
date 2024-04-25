@@ -69,9 +69,9 @@ areas = [
 mockup_output = add_book_cover_to_mockup(
     mockup_url='https://peer-digital.github.io/image_hosting/base_image.png',
     cover_urls=[
-        'https://www.sportproffsen.se/images/products/fitnord-ava300-white-ebike-side-profile_fullres.jpg',
-        'https://www.sportproffsen.se/images/products/fitnord-ranger-700fs-mint--main-image-dsc-8735-enhanced-nr_fullres.jpg',
-        'https://www.sportproffsen.se/images/products/fitnord-rumble-500-black-main-image-dsc-7911_fullres.jpg'
+        'https://s2.adlibris.com/images/69134732/sista-bilden.jpg',
+        'https://s1.adlibris.com/images/68318876/far-inte-till-havet.jpg',
+        'https://s2.adlibris.com/images/68370795/rummet-i-jorden.jpg'
     ],
     output_path='.png',
     areas=areas
